@@ -1,0 +1,29 @@
+<div class="container-fluid mt-4">
+    <div class="flex-row">
+        <div class="col-12">
+            <h1>Владельцы сервисов</h1>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <% if @owners.count > 0 %>
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr><th>Название</th></tr>
+                            </thead>
+                            <tbody>
+                                <% @owners.each do |owner| %>
+                                    <tr>
+                                        <td><%= owner.name %></td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    <% else %>
+                        <p><h5 class="emptyData">Данные отсутствуют</h5></p>
+                    <% end %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

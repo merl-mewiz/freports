@@ -1,0 +1,13 @@
+<%= form_for :municipality, url: @freport_form_url, method: @freport_form_method do |f| %>
+    <div class="form-group">
+        <%= f.label :name, 'Название' %><br />
+        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :filt_string, 'Поиск при импорте' %><br />
+        <%= f.text_field :filt_string, class: "form-control" %>
+    </div>
+    <div>
+        <%= f.submit "Сохранить", :class => "btn btn-sm btn-success" %>
+    </div>
+<% end %>

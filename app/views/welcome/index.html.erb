@@ -1,0 +1,61 @@
+<div class="container-fluid mt-4">
+    <div class="flex-row">
+        <div class="col-12">
+
+            <% Interaction.import_files %>
+
+            <div class="col-12">
+                <p><strong>Владелец сервиса</strong></p>
+                <% it = Interaction.all.group(:serv_owner) %>
+                <% it.each do |o_name| %>
+                    <p><%= o_name.serv_owner %></p>
+                <% end %>
+            </div>
+
+            <div class="col-12">
+                <p><strong>Потребитель сервиса</strong></p>
+                <% it = Interaction.all.group(:serv_consumer) %>
+                <% it.each do |o_name| %>
+                    <p><%= o_name.serv_consumer %></p>
+                <% end %>
+            </div>
+
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Владелец сервиса</th>
+                        <th>Наименование сервиса</th>
+                        <th>SID</th>
+                        <th>Потребитель сервиса</th>
+                        <th>Дата</th>
+                        <th>Количество обращений</th>
+                        <th>Количество ответов</th>
+                        <th>Сертификат</th>
+                        <th>Операция</th>
+                        <th>Статус</th>
+                        <th>Регион</th>
+                        <th>Наименование региона</th>
+                    </tr>
+                </thead>
+            <tbody>
+            <% @interactions.each do |row| %>
+                <tr>
+                    <td><%= row.serv_owner %></td>
+                    <td><%= row.serv_name %></td>
+                    <td><%= row.serv_sid %></td>
+                    <td><%= row.serv_consumer %></td>
+                    <td><%= row.serv_date.strftime('%d.%m.%Y') %></td>
+                    <td><%= row.request_count %></td>
+                    <td><%= row.response_count %></td>
+                    <td><%= row.certificate %></td>
+                    <td><%= row.operation %></td>
+                    <td><%= row.status %></td>
+                    <td><%= row.region %></td>
+                    <td><%= row.region_name %></td>
+                </tr>
+            <% end %>
+            </tbody>
+            <table>
+        </div>
+    </div>
+</div>

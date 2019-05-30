@@ -1,0 +1,30 @@
+<div class="container-fluid mt-4">
+    <div class="flex-row">
+        <div class="col-12">
+            <h1>Потребители сервисов</h1>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <% if @consumers.count > 0 %>
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr><th>Название</th><th>Муниципальный округ</th></tr>
+                            </thead>
+                            <tbody>
+                                <% @consumers.each do |consumer| %>
+                                    <tr>
+                                        <td><%= consumer.name %></td>
+                                        <td><%= consumer.municipality.name if consumer.municipality %></td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    <% else %>
+                        <p><h5 class="emptyData">Данные отсутствуют</h5></p>
+                    <% end %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

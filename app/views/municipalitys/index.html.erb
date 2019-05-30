@@ -1,0 +1,40 @@
+<div class="container-fluid mt-4">
+    <div class="flex-row">
+        <div class="col-12">
+            <h1>Муниципальные округа</h1>
+
+            <div class="card mt-3">
+                <div class="card-header">
+                    <div class="body-panel-buttons">
+                        <button id="btn-page-data" type="button" class="btn btn-sm btn-success" onclick="window.location.href='<%= new_municipality_path %>'">
+                            Добавить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <% if @municipalitys.count > 0 %>
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr><th>id</th><th>Название</th><th>Кол-во МФЦ и ОМСУ</th><th>Поиск при импорте</th></tr>
+                            </thead>
+                            <tbody>
+                                <% @municipalitys.each do |municipality| %>
+                                    <tr>
+                                        <td><%= municipality.id %></td>
+                                        <td><%= link_to municipality.name, edit_municipality_path(municipality) %></td>
+                                        <td><%= municipality.consumers.count %></td>
+                                        <td><%= municipality.filt_string %></td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    <% else %>
+                        <p><h5 class="emptyData">Данные отсутствуют</h5></p>
+                    <% end %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

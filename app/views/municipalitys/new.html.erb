@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <div class="flex-row">
+        <h2 class="mb-4">Новый муниципальный округ</h2>
+        <div class="card">
+            <div class="card-body">
+                <%= render 'municipality_form' %>
+            </div>
+            <div class="card-footer">
+                <%= link_to 'К списку округов', municipalitys_path,  :class => 'btn btn-sm btn-light' %>
+            </div>
+        </div>
+    </div>
+</div>

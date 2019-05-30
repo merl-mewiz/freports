@@ -1,0 +1,14 @@
+<div class="container mt-4">
+    <div class="flex-row">
+        <h2 class="mb-4">Редактирование «<%= @municipality.name %>»</h2>
+        <div class="card">
+            <div class="card-body">
+                <%= render 'municipality_form' %>
+            </div>
+            <div class="card-footer">
+                <%= link_to 'К списку округов', municipalitys_path,  :class => 'btn btn-sm btn-light' %>
+                <%= link_to 'Удалить округ', @municipality, :method => :delete, :class => 'btn btn-sm btn-danger float-right', data: { confirm: "Вы действительно хотите удалить округ «#{@municipality.name}»?" } %>
+            </div>
+        </div>
+    </div>
+</div>
