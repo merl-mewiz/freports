@@ -21,7 +21,7 @@ class MunicipalitysController < ApplicationController
             redirect_to municipalitys_path
         else
             editForm_params
-            flash.now[:alert] = @municipality.errors.full_messages.to_sentence
+            flash.now[:danger] = @municipality.errors.full_messages.to_sentence
             render :new
         end
     end
@@ -34,7 +34,7 @@ class MunicipalitysController < ApplicationController
             redirect_to municipalitys_path
         else
             editForm_params(@municipality.id)
-            flash.now[:alert] = @municipality.errors.full_messages.to_sentence
+            flash.now[:danger] = @municipality.errors.full_messages.to_sentence
             render :edit
         end
     end
@@ -47,7 +47,7 @@ class MunicipalitysController < ApplicationController
             redirect_to municipalitys_path
         else
             editForm_params(@municipality.id)
-            flash.now[:alert] = @municipality.errors.full_messages.to_sentence
+            flash.now[:danger] = @municipality.errors.full_messages.to_sentence
             render :edit
         end
     end

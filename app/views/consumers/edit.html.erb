@@ -1,0 +1,14 @@
+<div class="container mt-4">
+    <div class="flex-row">
+        <h2 class="mb-4">Редактирование «<%= @consumer.name %>»</h2>
+        <div class="card">
+            <div class="card-body">
+                <%= render 'consumer_form' %>
+            </div>
+            <div class="card-footer">
+                <%= link_to 'К списку потребителей', consumers_path,  :class => 'btn btn-sm btn-light' %>
+                <%= link_to 'Удалить потребителя', @consumer, :method => :delete, :class => 'btn btn-sm btn-danger float-right', data: { confirm: "Вы действительно хотите удалить потребителя? «#{@consumer.name}»?" } %>
+            </div>
+        </div>
+    </div>
+</div>

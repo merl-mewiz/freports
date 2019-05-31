@@ -2,13 +2,15 @@ class CreateInteractions < ActiveRecord::Migration[5.2]
     def change
         create_table :interactions do |t|
             # Владелец сервиса[0]
-            t.string :serv_owner
+            #t.string :serv_owner
+            t.belongs_to :owner, index: true
             # Наименование сервиса[1]
             t.string :serv_name
             # SID[2]
             t.string :serv_sid
             # Потребитель сервиса[3]
-            t.string :serv_consumer
+            #t.string :serv_consumer
+            t.belongs_to :consumer, index: true
             # Дата[4]
             t.datetime :serv_date
             # Количество обращений[5]

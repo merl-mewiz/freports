@@ -2,8 +2,14 @@
     <div class="flex-row">
         <div class="col-12">
             <h1>Потребители сервисов</h1>
-
             <div class="card mt-3">
+                <div class="card-header">
+                    <div class="body-panel-buttons">
+                        <button id="btn-page-data" type="button" class="btn btn-sm btn-success" onclick="window.location.href='<%= new_consumer_path %>'">
+                            Добавить
+                        </button>
+                    </div>
+                </div>
                 <div class="card-body">
                     <% if @consumers.count > 0 %>
                         <table class="table table-striped">
@@ -13,7 +19,7 @@
                             <tbody>
                                 <% @consumers.each do |consumer| %>
                                     <tr>
-                                        <td><%= consumer.name %></td>
+                                        <td><%= link_to consumer.name, edit_consumer_path(consumer) %></td>
                                         <td><%= consumer.municipality.name if consumer.municipality %></td>
                                     </tr>
                                 <% end %>

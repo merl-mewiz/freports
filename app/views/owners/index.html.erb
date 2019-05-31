@@ -2,8 +2,14 @@
     <div class="flex-row">
         <div class="col-12">
             <h1>Владельцы сервисов</h1>
-
             <div class="card mt-3">
+                <div class="card-header">
+                    <div class="body-panel-buttons">
+                        <button id="btn-page-data" type="button" class="btn btn-sm btn-success" onclick="window.location.href='<%= new_owner_path %>'">
+                            Добавить
+                        </button>
+                    </div>
+                </div>
                 <div class="card-body">
                     <% if @owners.count > 0 %>
                         <table class="table table-striped">
@@ -13,7 +19,7 @@
                             <tbody>
                                 <% @owners.each do |owner| %>
                                     <tr>
-                                        <td><%= owner.name %></td>
+                                        <td><%= link_to owner.name, edit_owner_path(owner) %></td>
                                     </tr>
                                 <% end %>
                             </tbody>

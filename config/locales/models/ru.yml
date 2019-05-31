@@ -1,8 +1,8 @@
 ru:
   activerecord:
     models:
-      post: "Пост"
-      news: "Новости"
+      consumer: "Пост"
+      interaction: "Новости"
       user: "Пользователь"
     attributes:
       post:

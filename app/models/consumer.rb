@@ -1,5 +1,9 @@
 class Consumer < ApplicationRecord
-    belongs_to :municipality
+    belongs_to :municipality, optional: true
+    has_many :interactions
+
+    validates :name, :presence => {:message => 'не может быть пустым'}
+    validates :municipality_id, numericality: true, allow_nil: true
 
     def self.find_or_create_by_custom(cname)
         unless cons = Consumer.find_by(name: cname)

@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 2019_05_30_053120) do
   end
 
   create_table "interactions", force: :cascade do |t|
-    t.string "serv_owner"
+    t.integer "owner_id"
     t.string "serv_name"
     t.string "serv_sid"
-    t.string "serv_consumer"
+    t.integer "consumer_id"
     t.datetime "serv_date"
     t.integer "request_count"
     t.integer "response_count"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_053120) do
     t.string "region_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["consumer_id"], name: "index_interactions_on_consumer_id"
+    t.index ["owner_id"], name: "index_interactions_on_owner_id"
   end
 
   create_table "municipalities", force: :cascade do |t|

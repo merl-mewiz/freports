@@ -56,6 +56,7 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    bootstrap-select-rails (1.13.8)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.15.1)
@@ -113,7 +114,7 @@ GEM
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     popper_js (1.14.5)
-    public_suffix (3.0.3)
+    public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
     rack-test (1.1.0)
@@ -146,8 +147,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    regexp_parser (1.5.0)
-    rubyzip (1.2.2)
+    regexp_parser (1.5.1)
+    rubyzip (1.2.3)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -209,6 +210,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
+  bootstrap-select-rails
   byebug
   capybara (>= 2.15)
   chromedriver-helper
