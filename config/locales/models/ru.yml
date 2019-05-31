@@ -1,13 +1,29 @@
 ru:
   activerecord:
     models:
-      consumer: "Пост"
-      interaction: "Новости"
-      user: "Пользователь"
+      consumer: "Потребители сервисов"
+      interaction: "Импорт"
+      municipality: "Муниципальные округа"
+      owner: "Владелец сервисов"
     attributes:
-      post:
-        title: "Название"
-      news:
-        title: "Заголовок"
-      user:
-        username: "Имя пользователя"
+      consumer:
+        municipality_id: "Муниципальный округ"
+        name: "Название"
+      interaction:
+        owner_id: "Владелец сервиса"
+        serv_name: "Наименование сервиса"
+        serv_sid: "SID"
+        consumer_id: "Потребитель сервиса"
+        serv_date: "Дата"
+        request_count: "Количество обращений"
+        response_count: "Количество ответов"
+        certificate: "Сертификат"
+        operation: "Операция"
+        status: "Статус"
+        region: "Регион"
+        region_name: "Наименование региона"
+      municipality:
+        name: "Название"
+        filt_string: "Поиск при импорте"
+      owner:
+        name: "Название"

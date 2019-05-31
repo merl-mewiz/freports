@@ -1,0 +1,12 @@
+<div class="container-fluid mt-4">
+    <div class="flex-row">
+        <div class="col-12">
+            <h1>Отчет по обращениям</h1>
+        </div>
+        <div class="col-12">
+            <% @result.each do |rez| %>
+                <p><%= rez[0] %>: <%= rez[1] %></p>
+            <% end %>
+        </div>
+    </div>
+</div>
