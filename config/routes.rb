@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root 'welcome#index'
+    root "reports#interaction_report"
     resources :municipalitys, :consumers, :owners, only: [:index, :new, :edit, :create, :update, :destroy]
-    get "/reports/table", to: "reports#table_view", as: "report_table_view"
+    get "/report", to: "reports#interaction_report", as: "interaction_report"
 end

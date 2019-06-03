@@ -1,15 +1,15 @@
 class ReportsController < ApplicationController
-    def table_view
+    def interaction_report
         @result = Hash.new
         municipalitys = Municipality.all
         municipalitys.each {|municipality| @result[municipality.name] = 0} if municipalitys.count > 0
-        @filt_owner = "Все"
+        @selected_opt = 0
+
         unless params[:q].present?
             interactions = Interaction.all
-            @selected_opt = 0
         else
             interactions = Interaction.where(owner_id: params[:q].to_i)
-            if own = Owner.find(params[:q].to_i)
+            if own = Owner.find_by_id(params[:q].to_i)
                 @selected_opt = own.id
             end
         end
