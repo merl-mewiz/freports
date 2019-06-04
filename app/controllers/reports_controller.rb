@@ -11,12 +11,14 @@ class ReportsController < ApplicationController
             interactions = Interaction.where(owner_id: params[:q].to_i)
             if own = Owner.find_by_id(params[:q].to_i)
                 @selected_opt = own.id
+            else
+                return @result = nil
             end
         end
 
         interactions.each do |interaction|
-            cons = Consumer.find(interaction.consumer_id)
-            if cons.municipality_id && cons.municipality_id != 0
+            cons = Consumer.find_by_id(interaction.consumer_id)
+            if cons.municipality_id.present? && cons.municipality_id != 0
                 municipality = Municipality.find(cons.municipality_id)
                 @result[municipality.name] += interaction.request_count
             end

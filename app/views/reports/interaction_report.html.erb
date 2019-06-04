@@ -4,8 +4,6 @@
             <h1>Отчет по обращениям</h1>
         </div>
 
-        <% Interaction.import_files %>
-
         <div class="col-12 mt-4 mb-4">
             <div class="card">
                 <div class="card-header">
@@ -16,13 +14,12 @@
                 </div>
             </div>
         </div>
-
         <div class="col-12">
             <%= column_chart @result,
                 adapter: 'highcharts',
                 height: "400px",
                 label: "Кол-во запросов: ",
-                messages: {empty: "No data"},
+                messages: {empty: "Данные отсутствуют"},
                 library:{
                     tooltip:{
                         shared: true,
@@ -32,9 +29,8 @@
                 }
             %>
         </div>
-
         <div class="col-12 mt-4">
-            <% if @result && @result.count > 0 %>
+            <% if @result.present? %>
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr><th>№</th><th>Муниципальный округ</th><th>Кол-во запросов</th></tr>
@@ -49,8 +45,6 @@
                         <% end %>
                     </tbody>
                 </table>
-            <% else %>
-                <p><h5 class="emptyData">Данные отсутствуют</h5></p>
             <% end %>
         </div>
     </div>

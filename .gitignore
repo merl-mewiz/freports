@@ -16,7 +16,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/public/uploads/*
 
 # Ignore uploaded files in development
 /storage/*
@@ -30,3 +29,4 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/public/uploads/*

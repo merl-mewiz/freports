@@ -9,8 +9,8 @@
     </script>
     <div class="form-group">
         <%= f.label :municipality_id, 'Муниципальный округ' %><br />
-        <%= f.select :municipality_id, Municipality.all.collect{|p| [p.name, p.id]}.prepend(['Не указан', 0, '']), {}, class: "selectpicker",
-        "data-live-search"=>"true", "data-none-results-text"=>"Ничего не найдено", "data-width" =>"100%" %>
+        <%= f.select :municipality_id, Municipality.all.collect{|p| [p.name, p.id]}.prepend(['Не указан', 0, '']), {}, class: "custom-select",
+        "data-width" =>"100%" %>
     </div>
 
     <div>
